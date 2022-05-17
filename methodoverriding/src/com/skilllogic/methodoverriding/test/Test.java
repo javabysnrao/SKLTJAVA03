@@ -5,7 +5,6 @@ import com.skilllogic.methodoverriding.RBI;
 import com.skilllogic.methodoverriding.SBI;
 
 public class Test {
-
 	public static void main(String[] args) {
 		System.out.println("Test.main() method....");
 		SBI sbi = new SBI();
@@ -14,6 +13,5 @@ public class Test {
 		RBI hdfc = new HDFC();
 		double hdfcresult  = hdfc.getRateOfInterest();
 		System.out.println("HDFC rate of interest in % : "+hdfcresult);
-		
 	}
 }
