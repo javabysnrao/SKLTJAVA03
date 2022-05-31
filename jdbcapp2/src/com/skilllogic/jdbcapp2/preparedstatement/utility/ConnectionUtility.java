@@ -1,21 +1,45 @@
 package com.skilllogic.jdbcapp2.preparedstatement.utility;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class ConnectionUtility {
 	public static Connection getConnectionObject() {
 		Connection con = null;
 		try {
+			//Read properties file
+			InputStream fis1 = ConnectionUtility.class.getClassLoader().getResourceAsStream("jdbc.properties");
+			//FileInputStream fis = new FileInputStream("src/com/skilllogic/jdbcapp2/preparedstatement/commons/jdbc.properties");
+			//FileReader fr = new FileReader("/com/skilllogic/jdbcapp2/preparedstatement/commons/jdbc.properties");
+			//Create Properties class object
+			Properties prop = new Properties();
+			Properties p1 = System.getProperties();
+			System.out.println(p1.toString());
+			//load properties file
+			prop.load(fis1);
+			String driverclass = prop.getProperty("driverclass");
+			String url = prop.getProperty("url");
+			String user = prop.getProperty("user");
+			String password = prop.getProperty("password");
 			// loading the driver class
-			Class.forName("com.mysql.cj.jdbc.Driver");
+			Class.forName(driverclass);
 			// Creating the connection obj
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/skilllogic9ambatch", "root", "root");
+			con = DriverManager.getConnection(url,user,password);
 		} catch (ClassNotFoundException cnf) {
 			cnf.printStackTrace();
 		} catch (SQLException sql) {
 			sql.printStackTrace();
+		}catch(FileNotFoundException fne) {
+			fne.printStackTrace();
+		}catch(IOException ioe) {
+			ioe.printStackTrace();
 		}
 		return con;
 	}
