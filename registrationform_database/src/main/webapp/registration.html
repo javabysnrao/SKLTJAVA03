@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+   <form action="register" method="post">
+      <table>
+        <tr><td>Name</td><td><input type="text" name="name"></td></tr>
+        <tr><td>Email</td><td><input type="text" name="email"></td></tr>
+        <tr><td>Contact</td><td><input type="text" name="contact"></td></tr>
+        <tr><td>Gender</td><td><input type="radio" name="gender" value="male">Male<input type="radio" name="gender" value="female">Female</td></tr>
+        <tr><td>Hobbies</td><td>
+        <input type="checkbox" name="hobbies" value="Reading Books">Reading Books
+        <input type="checkbox" name="hobbies" value="Watching Movies">Watching Movies
+        <input type="checkbox" name="hobbies" value="Listening Music">Listening Music
+        </td></tr> 
+        <tr><td>City</td><td>
+        <select name="city">
+           <option value="Hyderabad">Hyderabad</option>
+            <option value="Vizag">Vizag</option>
+             <option value="Vijaywada">Vijaywada</option>
+        </select></td></tr>
+        <tr><td>Address</td><td><textarea name="address" rows="5" cols="15"></textarea></td></tr>
+        <tr><td><input type="submit" value="Register"></td></tr>
+      </table>
+   </form>
+</body>
+</html>

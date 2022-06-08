@@ -1,0 +1,15 @@
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <welcome-file-list>
+     <welcome-file>registration.html</welcome-file>
+  </welcome-file-list>
+  <!-- Registration Servlet Configuration -->
+  <servlet>
+     <servlet-name>xyz</servlet-name>
+     <servlet-class>com.skillogic.registrationform.servlet.RegistrationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+     <servlet-name>xyz</servlet-name>
+     <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+</web-app>
