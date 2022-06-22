@@ -1,6 +1,7 @@
 package com.skilllogic.springcore_dependencyinjection.beans;
 
 import java.util.Date;
+import java.util.List;
 
 public class Student {
 
@@ -10,6 +11,15 @@ public class Student {
 	private boolean vaccinated;
 	private Address address;
 	private Date date;
+	private List<String> subjects;
+	
+	public Student() {
+		System.out.println("Student.Student(): 0-param constructor");
+	}
+
+	public void setSubjects(List<String> subjects) {
+		this.subjects = subjects;
+	}
 
 	public void setId(int id) {
 		this.id = id;
@@ -47,6 +57,10 @@ public class Student {
 		System.out.println("Good Night");
 		System.out.println("Student Details");
 		System.out.println( id + "   " + name +"   "+avg+"   "+vaccinated);
+		System.out.println("Subject Details");
+		subjects.forEach(sub -> {
+			 System.out.println(sub);
+		});
 		address.displayAddress();// calling business method dependent class
 
 	}
