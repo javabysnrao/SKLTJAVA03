@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+        
+        <bean id="st" class="skilllogic.springcore_constructorinjection.beans.Student">
+           <constructor-arg name="id" value="111"></constructor-arg>
+           <constructor-arg name="name"  value="Raja"></constructor-arg>
+           <constructor-arg name="avg" value="90.45"></constructor-arg>
+           <constructor-arg ref="addrs" name="address"></constructor-arg>
+        </bean>
+        
+        <bean id="addrs" class="skilllogic.springcore_constructorinjection.beans.Address">
+            <constructor-arg name="houseNo" value="345-56/7"></constructor-arg>
+            <constructor-arg name="area" value="Ameerpet"></constructor-arg>
+            <constructor-arg name="city" value="Hyderabad"></constructor-arg>
+        </bean>
+        
+        
+</beans>        
