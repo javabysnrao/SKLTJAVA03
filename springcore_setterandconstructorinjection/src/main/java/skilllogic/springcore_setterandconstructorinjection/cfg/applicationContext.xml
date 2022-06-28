@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:util="http://www.springframework.org/schema/util" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+     
+     <bean id="emp" class="skilllogic.springcore_setterandconstructorinjection.beans.Employee" autowire="constructor">
+         <!-- Constructor injection -->
+        <constructor-arg name="id" value="222"></constructor-arg>
+        <constructor-arg name="name" value="raja"></constructor-arg>
+        <constructor-arg name="salary" value="50000"></constructor-arg>
+       <!--  <constructor-arg name="address" ref="addrs1"></constructor-arg> -->
+        
+        <!-- Setter injection -->
+       <!--  <property name="id" value="111"></property>
+        <property name="name" value="suresh"></property>
+        <property name="salary" value="40000"></property>
+        <property name="address" ref="addrs"></property> -->
+       
+     </bean>
+     
+     <bean id="addrs1" class="skilllogic.springcore_setterandconstructorinjection.beans.Address">
+         <property name="houseNo" value="257-56/7"></property>
+         <property name="area" value="Ameerpet"></property>
+         <property name="city" value="Hyd"></property>
+     </bean>
+    
+        
+</beans>
